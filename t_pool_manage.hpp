@@ -18,7 +18,7 @@
 
 namespace n_thread_pool {
 
-class task_pool final : noncopyable
+class task_pool : noncopyable
 {
 
 public:
@@ -92,14 +92,15 @@ public:
         };
     }
 
-
 private:
     unsigned int tCount_;
     std::future<void>* ths_;
-    std::mutex mtx_;
     std::condition_variable cv_;
-    std::queue<std::function<void ()>> task_;
     bool stop_;
+
+protected:
+    std::mutex mtx_;
+    std::queue<std::function<void ()>> task_;
 };
 
 }  // n_thread_pool
