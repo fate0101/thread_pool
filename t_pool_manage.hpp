@@ -70,12 +70,9 @@ public:
 
     void telescopicThreadCount() noexcept
     {
-        // 根据任务数量伸缩线程数，这里伸缩不能太频繁
-        // 最好能根据一段时间的任务进行动态调整
-        // 最好根据论文或者依据实验数据来编写
-
-        // 线程数量过多会增大 线程切换开销
-        // 另外线程可以减少后续任务的等待时间，但是会增加总执行时间
+        /*
+        *  Fixme: stub
+        */
     }
 
     static void __thr(task_pool* tp)
