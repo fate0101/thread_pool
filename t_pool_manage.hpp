@@ -43,7 +43,7 @@ public:
         }
     }
 
-    ~task_pool()
+    virtual ~task_pool()
     {
         stop_ = true;
         cv_.notify_all();
